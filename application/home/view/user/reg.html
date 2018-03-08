@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>jQuery背景切换注册登录模板</title>
+<link rel="stylesheet" href="__STATIC__/home/css/style.css" />
+<body>
+
+
+
+<div class="register-container">
+	<h1>ShareLink</h1>
+	
+	<div class="connect">
+		<p>Link the world. Share to world.</p>
+	</div>
+	
+	<form action="reg_phon" method="post" id="registerForm">
+		<div>
+			<input type="text" name="username" id="username" class="username" placeholder="您的用户名" autocomplete="off"/>
+		</div>
+		<div>
+			<input type="password" name="password" class="password" placeholder="输入密码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<input type="password" name="confirm_password" class="confirm_password" placeholder="再次输入密码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		
+		<div><div><img src="img_code" onclick="this.src='img_code?r='+Math.random();"></div></div>
+		
+		<div>
+			<input type="text" name="code" id="code" class="code" placeholder="验证码" autocomplete="off"/>
+		</div>
+
+		<div>
+			<input type="email" name="email" id="email" class="email" placeholder="输入邮箱地址" oncontextmenu="return false" onpaste="return false" />
+		</div>
+
+		<button id="submit" type="submit">继续注册</button>
+	</form>
+	<a href="index.html">
+		<button type="button" class="register-tis">已经有账号？</button>
+	</a>
+
+</div>
+
+
+<script src="__STATIC__/home/js/jquery.min.js"></script>
+<script src="__STATIC__/home/js/common.js"></script>
+<!--背景图片自动更换-->
+<script src="__STATIC__/home/js/supersized.3.2.7.min.js"></script>
+<script src="__STATIC__/home/js/supersized-init.js"></script>
+<!--表单验证-->
+<script src="__STATIC__/home/js/jquery.validate.min.js?var1.14.0"></script>
+
+</body>
+</html>
+<script>
+jQuery(function($){
+
+    $.supersized({
+
+        // 功能
+        slide_interval     : 4000,    // 转换之间的长度
+        transition         : 1,    // 0 - 无，1 - 淡入淡出，2 - 滑动顶，3 - 滑动向右，4 - 滑底，5 - 滑块向左，6 - 旋转木马右键，7 - 左旋转木马
+        transition_speed   : 1000,    // 转型速度
+        performance        : 1,    // 0 - 正常，1 - 混合速度/质量，2 - 更优的图像质量，三优的转换速度//（仅适用于火狐/ IE浏览器，而不是Webkit的）
+
+        // 大小和位置
+        min_width          : 0,    // 最小允许宽度（以像素为单位）
+        min_height         : 0,    // 最小允许高度（以像素为单位）
+        vertical_center    : 1,    // 垂直居中背景
+        horizontal_center  : 1,    // 水平中心的背景
+        fit_always         : 0,    // 图像绝不会超过浏览器的宽度或高度（忽略分钟。尺寸）
+        fit_portrait       : 1,    // 纵向图像将不超过浏览器高度
+        fit_landscape      : 0,    // 景观的图像将不超过宽度的浏览器
+
+        // 组件
+        slide_links        : 'blank',    // 个别环节为每张幻灯片（选项：假的，'民'，'名'，'空'）
+        slides             : [    // 幻灯片影像
+                                 {image : '__STATIC__/home/images/1.jpg'},
+                                 {image : '__STATIC__/home/images/2.jpg'},
+                                 {image : '__STATIC__/home/images/3.jpg'}
+                       ]
+
+    });
+
+});
+</script>
